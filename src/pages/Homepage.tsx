@@ -34,7 +34,7 @@ const Homepage = () => {
       <Fetch2/>
       <FetchStudent/>
 
-      <button style={{fontSize:"30px"}}>
+      <button style={{fontSize:"20px"}}>
         <a href="/signup">
         Register Here
         </a>
@@ -42,7 +42,7 @@ const Homepage = () => {
 
       <br />
 
-      <button style={{fontSize:"25px"}}>
+      <button style={{fontSize:"20px"}}>
         <Link to={"/signup"}>
         Sign Up
         </Link>
@@ -52,6 +52,14 @@ const Homepage = () => {
 
       <button style={{fontSize:"20px"}} onClick={handleNavigate}>
         New User? Register Here.
+      </button>
+
+      <br />
+
+      <button style={{fontSize:"20px"}}>
+        <Link to={"/login2"}>
+        Login
+        </Link>
       </button>
       
     </div>

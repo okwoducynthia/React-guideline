@@ -8,6 +8,7 @@ import Question from './components/Question/Question'
 import ProductDetails from './pages/ProductDetails/ProductDetails'
 import StudentApi from './pages/StudentsApi/StudentApi'
 import Signup from './pages/SignUp/Signup'
+import Login2 from './pages/Login2/Login2'
 
 
 
@@ -26,6 +27,7 @@ function App() {
           <Route path='/productDetails/:id' element={<ProductDetails/>}/>
           <Route path='/studentApi/:id' element={<StudentApi/>}/>
           <Route path='/signup' element={<Signup/>}/>
+          <Route path='/login2' element={<Login2/>}/>
         </Routes>
 
 
