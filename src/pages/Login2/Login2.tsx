@@ -4,11 +4,11 @@ import {
   EyeIcon,
   EyeSlashIcon,
 } from "@heroicons/react/24/outline";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 // import { useNavigate } from "react-router-dom";
 
 export default function Login2() {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
@@ -46,7 +46,7 @@ export default function Login2() {
       setPassword("");
 
       localStorage.setItem("userId", response.data._id);
-        // navigate("/");
+        navigate("/");
         // This navigate is where you would redirect the user after signing up
     } catch (error: any) {
       setErrorMsg(error?.response?.data?.message || "Login failed.");
@@ -124,7 +124,7 @@ export default function Login2() {
         {errorMsg && <p className="mt-6 text-red-600">{errorMsg}</p>}
 
         {/* Submit Button */}
-        <div className="mt-10">
+        <div className="mt-10" >
           <button
             type="submit"
             disabled={loading}

@@ -2,15 +2,19 @@ import { useState, type FormEvent } from "react";
 import axios from "axios";
 import { Field, Label, Switch } from "@headlessui/react";
 import {
-  ChevronDownIcon, 
+  ChevronDownIcon,
   EyeIcon,
   EyeSlashIcon,
 } from "@heroicons/react/24/outline";
 import { useNavigate } from "react-router-dom";
 // import { useNavigate } from "react-router-dom";
 
-export default function Signup() {
-    const navigate = useNavigate();
+export default function UpdateUserProfile() {
+  //THINGS TO CHANGE
+  // 1. Retrieving a user id from local storage to enable you to update a users profile.
+  const userId = localStorage.getItem("userId");
+
+  const navigate = useNavigate();
   const [firstName, setFirstName] = useState<string>("");
   const [lastName, setLastName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
@@ -45,15 +49,16 @@ export default function Signup() {
       "Content-Type": "application/json",
     };
     try {
-      const response = await axios.post(
-        "https://fullstack-student-backend.onrender.com/api/auth",
+      // 2. to update also change get to put and change the api
+      const response = await axios.put(
+        `https://fullstack-student-backend.onrender.com/api/auth/update/${userId}`,
         data,
         {
           headers,
         }
       );
 
-      setSuccessMsg("Signup successful!");
+      setSuccessMsg("Update successful!");
       setFirstName("");
       setLastName("");
       setEmail("");
@@ -62,10 +67,10 @@ export default function Signup() {
       setAgreed(false);
 
       localStorage.setItem("userId", response.data._id);
-        navigate("/login2");
-        // This navigate is where you would redirect the user after signing up
+      navigate("/");
+      // This navigate is where you would redirect the user after signing up
     } catch (error: any) {
-      setErrorMsg(error?.response?.data?.message || "Signup failed.");
+      setErrorMsg(error?.response?.data?.message || "Profile Update failed.");
     } finally {
       setLoading(false);
     }
@@ -87,7 +92,7 @@ export default function Signup() {
       </div>
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-          SignUp
+          Update Profile
         </h2>
         <p className="mt-2 text-lg text-gray-600">
           Join us to access awesome features!
@@ -263,7 +268,7 @@ export default function Signup() {
                 : "bg-indigo-600 hover:bg-indigo-500"
             }`}
           >
-            {loading ? "Loading..." : "Signup"}
+            {loading ? "Loading..." : "Update Profile"}
           </button>
         </div>
       </form>

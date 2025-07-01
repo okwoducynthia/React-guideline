@@ -61,6 +61,14 @@ const Homepage = () => {
         Login
         </Link>
       </button>
+
+      <br />
+
+      <button style={{fontSize:"20px"}}>
+        <Link to={"/profile"}>
+        Update Profile
+        </Link>
+      </button>
       
     </div>
   );
