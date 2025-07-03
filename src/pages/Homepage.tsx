@@ -10,6 +10,8 @@ import FetchAllData from "../components/FetchAllData";
 import Fetch2 from "../components/ReactHooks/Fetch2";
 import FetchStudent from "../components/StudentApi/FetchStudent";
 import { Link, useNavigate } from "react-router-dom";
+import FetchDataTable from "../components/FetchDataTable";
+import FetchTable2 from "../components/FetchTable2";
 
 
 const Homepage = () => {
@@ -33,6 +35,8 @@ const Homepage = () => {
       <FetchAllData/>
       <Fetch2/>
       <FetchStudent/>
+      <FetchDataTable/>
+      <FetchTable2/>
 
       <button style={{fontSize:"20px"}}>
         <a href="/signup">

@@ -10,8 +10,8 @@ import { useNavigate } from "react-router-dom";
 // import { useNavigate } from "react-router-dom";
 
 export default function UpdateUserProfile() {
-  //THINGS TO CHANGE
-  // 1. Retrieving a user id from local storage to enable you to update a users profile.
+  //THINGS TO CHANGE TO UPDATE USER PROFILE
+  // 1. Retrieving a user id from local storage to enable you to update a users profile (Change set to get).
   const userId = localStorage.getItem("userId");
 
   const navigate = useNavigate();
